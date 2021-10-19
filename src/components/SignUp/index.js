@@ -1,15 +1,31 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { SignInLink } from "../SignIn";
 import { compose } from "recompose";
+import {
+  Container,
+  Wrapper,
+  FormContainer,
+  Logo,
+  StyledForm,
+  StyledTextInput,
+} from "./signupElements";
+import { ButtonSignUp } from "../Landing/landingElements";
 
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm />
-  </div>
+  <Container>
+    <Wrapper>
+      <Logo>
+        <h1>SignUp</h1>
+      </Logo>
+      <FormContainer>
+        <SignUpFormBase />
+      </FormContainer>
+    </Wrapper>
+  </Container>
 );
 
 const INITIAL_STATE = {
@@ -57,41 +73,41 @@ class SignUpFormBase extends Component {
       username === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <StyledForm onSubmit={this.onSubmit}>
+        <StyledTextInput
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
-        <input
+        <StyledTextInput
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <StyledTextInput
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <StyledTextInput
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <SignInLink />
+        <ButtonSignUp disabled={isInvalid} type="submit">
           Sign Up
-        </button>
-
+        </ButtonSignUp>
         {error && <p>{error.message}</p>}
-      </form>
+      </StyledForm>
     );
   }
 }

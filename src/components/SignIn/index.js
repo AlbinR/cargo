@@ -1,17 +1,32 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { compose } from "recompose";
+
+import {
+  StyledForm,
+  StyledTextInput,
+  FormContainer,
+  Logo,
+  Container,
+  Wrapper,
+} from "../SignUp/signupElements";
+import { ButtonSignUp } from "../Landing/landingElements";
 
 import { SignUpLink } from "../SignUp";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <SignUpLink />
-  </div>
+  <Container>
+    <Wrapper>
+      <Logo>
+        <h1>Log In</h1>
+      </Logo>
+      <FormContainer>
+        <SignInFormBase />
+      </FormContainer>
+    </Wrapper>
+  </Container>
 );
 
 const INITIAL_STATE = {
@@ -53,33 +68,39 @@ class SignInFormBase extends Component {
     const isInvalid = password === "" || email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <StyledForm onSubmit={this.onSubmit}>
+        <StyledTextInput
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <StyledTextInput
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+        <SignUpLink />
+        <ButtonSignUp disabled={isInvalid} type="submit">
+          Log In
+        </ButtonSignUp>
 
         {error && <p>{error.message}</p>}
-      </form>
+      </StyledForm>
     );
   }
 }
+const SignInLink = () => (
+  <p>
+    Already have an account? <Link to={ROUTES.SIGN_IN}>Log In</Link>
+  </p>
+);
 
 const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);
 
 export default SignInPage;
 
-export { SignInForm };
+export { SignInForm, SignInLink };

@@ -45,7 +45,8 @@ export const ButtonSignUp = styled.button`
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5px;
+  margin: 8px 0;
+  cursor: pointer;
 `;
 export const ButtonSignIn = styled.button`
   background-color: #fff;
@@ -58,5 +59,6 @@ export const ButtonSignIn = styled.button`
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 5px;
+  margin: 8px 0;
+  cursor: pointer;
 `;
