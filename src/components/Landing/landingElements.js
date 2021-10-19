@@ -22,10 +22,16 @@ export const LandingContent = styled.div`
   margin-bottom: 80px;
 `;
 export const Logo = styled.div`
-  margin: 50px;
+  margin: 70px 0;
 `;
 export const Body = styled.div`
-  width: 250px;
+  width: 252px;
+  margin-bottom: 60px;
+  & p {
+    font-family: "Comfortaa", cursive;
+    font-size: 16px;
+    line-height: 150%;
+  }
 `;
 export const ButtonDiv = styled.div`
   display: flex;
@@ -37,6 +43,7 @@ export const ButtonDiv = styled.div`
 export const ButtonSignUp = styled.button`
   background-color: #43456c;
   width: 100%;
+  height: 50px;
   border: none;
   border-radius: 50px;
   color: white;

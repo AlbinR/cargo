@@ -6,9 +6,13 @@ import {
   Logo,
   Body,
   ButtonDiv,
-  ButtonSignUp,
-  ButtonSignIn,
 } from "./landingElements";
+
+import {
+  StyledButtonDark,
+  StyledButtonLight,
+} from "../styledComponents/styledElements";
+
 import * as ROUTES from "../../constants/routes";
 import { Link } from "react-router-dom";
 
@@ -29,10 +33,10 @@ const Landing = () => {
             </Body>
             <ButtonDiv>
               <Link to={ROUTES.SIGN_UP}>
-                <ButtonSignUp>Sign Up</ButtonSignUp>
+                <StyledButtonDark>SIGN UP</StyledButtonDark>
               </Link>
               <Link to={ROUTES.SIGN_IN}>
-                <ButtonSignIn>Login</ButtonSignIn>
+                <StyledButtonLight>LOGIN</StyledButtonLight>
               </Link>
             </ButtonDiv>
           </LandingContent>

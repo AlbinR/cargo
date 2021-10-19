@@ -4,13 +4,16 @@ import { compose } from "recompose";
 
 import {
   StyledForm,
-  StyledTextInput,
   FormContainer,
   Logo,
   Container,
   Wrapper,
 } from "../SignUp/signupElements";
-import { ButtonSignUp } from "../Landing/landingElements";
+
+import {
+  StyledButtonDark,
+  StyledTextInput,
+} from "../styledComponents/styledElements";
 
 import { SignUpLink } from "../SignUp";
 import { withFirebase } from "../Firebase";
@@ -84,9 +87,9 @@ class SignInFormBase extends Component {
           placeholder="Password"
         />
         <SignUpLink />
-        <ButtonSignUp disabled={isInvalid} type="submit">
-          Log In
-        </ButtonSignUp>
+        <StyledButtonDark disabled={isInvalid} type="submit">
+          LOGIN
+        </StyledButtonDark>
 
         {error && <p>{error.message}</p>}
       </StyledForm>

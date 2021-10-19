@@ -11,13 +11,13 @@ const GlobalStyle = createGlobalStyle`
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   
   & p, li, input, select, button {
     font-size: 18px;
   }
   & h1, h2, h3 {
-    font-family: 'Lato', sans-serif;
+  font-family: 'Comfortaa', cursive;
   }
 }
 ::-webkit-scrollbar {

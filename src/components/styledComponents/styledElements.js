@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledButtonDark = styled.button`
+  font-family: "Comfortaa", cursive;
   background-color: #43456c;
   width: 100%;
   border: none;
@@ -10,12 +11,14 @@ export const StyledButtonDark = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 8px 0;
   cursor: pointer;
+  border: solid 2px #43456c;
 `;
 
 export const StyledButtonLight = styled.button`
+  font-family: "Comfortaa", cursive;
   background-color: #fff;
   width: 100%;
   border: solid 2px #43456c;
@@ -25,13 +28,13 @@ export const StyledButtonLight = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 8px 0;
+  font-size: 20px;
+  margin: 10px 0;
   cursor: pointer;
 `;
 
 export const StyledTextInput = styled.input`
-  width: 100%;
+  width: 300px;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
