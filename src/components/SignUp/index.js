@@ -1,31 +1,14 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import { SignInLink } from "../SignIn";
-import { compose } from "recompose";
-import {
-  Container,
-  Wrapper,
-  FormContainer,
-  Logo,
-  StyledForm,
-  StyledTextInput,
-} from "./signupElements";
-import { ButtonSignUp } from "../Landing/landingElements";
 
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
 const SignUpPage = () => (
-  <Container>
-    <Wrapper>
-      <Logo>
-        <h1>SignUp</h1>
-      </Logo>
-      <FormContainer>
-        <SignUpFormBase />
-      </FormContainer>
-    </Wrapper>
-  </Container>
+  <div>
+    <h1>SignUp</h1>
+    <SignUpForm />
+  </div>
 );
 
 const INITIAL_STATE = {
@@ -44,7 +27,7 @@ class SignUpFormBase extends Component {
   }
 
   onSubmit = (event) => {
-    const { username, email, passwordOne } = this.state;
+    const { email, passwordOne } = this.state;
 
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
@@ -64,50 +47,40 @@ class SignUpFormBase extends Component {
   };
 
   render() {
-    const { username, email, passwordOne, passwordTwo, error } = this.state;
+    const { email, passwordOne, passwordTwo, error } = this.state;
 
     const isInvalid =
-      passwordOne !== passwordTwo ||
-      passwordOne === "" ||
-      email === "" ||
-      username === "";
+      passwordOne !== passwordTwo || passwordOne === "" || email === "";
 
     return (
-      <StyledForm onSubmit={this.onSubmit}>
-        <StyledTextInput
-          name="username"
-          value={username}
-          onChange={this.onChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <StyledTextInput
+      <form onSubmit={this.onSubmit}>
+        <input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <StyledTextInput
+        <input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <StyledTextInput
+        <input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <SignInLink />
-        <ButtonSignUp disabled={isInvalid} type="submit">
+        <button disabled={isInvalid} type="submit">
           Sign Up
-        </ButtonSignUp>
+        </button>
+
         {error && <p>{error.message}</p>}
-      </StyledForm>
+      </form>
     );
   }
 }
@@ -118,7 +91,7 @@ const SignUpLink = () => (
   </p>
 );
 
-const SignUpForm = compose(withRouter, withFirebase)(SignUpFormBase);
+const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 
 export default SignUpPage;
 

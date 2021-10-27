@@ -1,40 +1,24 @@
-import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { compose } from "recompose";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 
-import {
-  StyledForm,
-  FormContainer,
-  Logo,
-  Container,
-  Wrapper,
-} from "../SignUp/signupElements";
-
-import {
-  StyledButtonDark,
-  StyledTextInput,
-} from "../styledComponents/styledElements";
-
-import { SignUpLink } from "../SignUp";
-import { withFirebase } from "../Firebase";
-import * as ROUTES from "../../constants/routes";
+import { SignUpLink } from '../SignUp';
+import { PasswordForgetLink } from '../PasswordForget';
+import { withFirebase } from '../Firebase';
+import * as ROUTES from '../../constants/routes';
 
 const SignInPage = () => (
-  <Container>
-    <Wrapper>
-      <Logo>
-        <h1>Log In</h1>
-      </Logo>
-      <FormContainer>
-        <SignInFormBase />
-      </FormContainer>
-    </Wrapper>
-  </Container>
+  <div>
+    <h1>SignIn</h1>
+    <SignInForm />
+    <PasswordForgetLink />
+    <SignUpLink />
+  </div>
 );
 
 const INITIAL_STATE = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
   error: null,
 };
 
@@ -45,7 +29,7 @@ class SignInFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     const { email, password } = this.state;
 
     this.props.firebase
@@ -54,56 +38,53 @@ class SignInFormBase extends Component {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.HOME);
       })
-      .catch((error) => {
+      .catch(error => {
         this.setState({ error });
       });
 
     event.preventDefault();
   };
 
-  onChange = (event) => {
+  onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     const { email, password, error } = this.state;
 
-    const isInvalid = password === "" || email === "";
+    const isInvalid = password === '' || email === '';
 
     return (
-      <StyledForm onSubmit={this.onSubmit}>
-        <StyledTextInput
+      <form onSubmit={this.onSubmit}>
+        <input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <StyledTextInput
+        <input
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <SignUpLink />
-        <StyledButtonDark disabled={isInvalid} type="submit">
-          LOGIN
-        </StyledButtonDark>
+        <button disabled={isInvalid} type="submit">
+          Sign In
+        </button>
 
         {error && <p>{error.message}</p>}
-      </StyledForm>
+      </form>
     );
   }
 }
-const SignInLink = () => (
-  <p>
-    Already have an account? <Link to={ROUTES.SIGN_IN}>Log In</Link>
-  </p>
-);
 
-const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);
+const SignInForm = compose(
+  withRouter,
+  withFirebase,
+)(SignInFormBase);
 
 export default SignInPage;
 
-export { SignInForm, SignInLink };
+export { SignInForm };
