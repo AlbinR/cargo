@@ -1,14 +1,24 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
+import { Input } from "../Input.style";
+import { Button } from "../Button.style";
+import { AppContainer, Wrapper, Box } from "../Container.style";
+
+import { SignInLink } from "../SignIn";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../constants/routes";
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm />
-  </div>
+  <AppContainer>
+    <Wrapper>
+      <Box>
+        <h1>Sign up</h1>
+        <SignUpForm />
+        <SignInLink />
+      </Box>
+    </Wrapper>
+  </AppContainer>
 );
 
 const INITIAL_STATE = {
@@ -47,37 +57,52 @@ class SignUpFormBase extends Component {
   };
 
   render() {
-    const { email, passwordOne, passwordTwo, error } = this.state;
+    const { username, email, passwordOne, passwordTwo, error } = this.state;
 
     const isInvalid =
-      passwordOne !== passwordTwo || passwordOne === "" || email === "";
+      passwordOne !== passwordTwo ||
+      passwordOne === "" ||
+      email === "" ||
+      username === "";
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+        <Input
+          name="username"
+          value={username}
+          onChange={this.onChange}
+          type="text"
+          placeholder="Full name"
+        />
+        <Input
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
-        <input
+        <Input
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <Input
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
+        <Button
+          backgroundColor="#43456C"
+          textColor="#fff"
+          disabled={isInvalid}
+          type="submit"
+        >
+          SIGN UP
+        </Button>
 
         {error && <p>{error.message}</p>}
       </form>
