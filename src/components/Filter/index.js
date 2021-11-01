@@ -3,8 +3,17 @@ import Calendar from "react-calendar";
 import { withRouter, Link } from "react-router-dom";
 
 import { Button } from "../Button.style";
-import { AppContainer, Wrapper } from "../Container.style";
-import { Book, Rent, OrDiv, CalDiv } from "./Filter.style";
+import { AppContainer, Wrapper, Box } from "../Container.style";
+import {
+  Book,
+  Rent,
+  OrDiv,
+  CalDiv,
+  CarChoiceContainer,
+  Choice,
+  BtnWrap,
+  Btn,
+} from "./Filter.style";
 import "./calendar.css";
 
 import * as ROUTES from "../../constants/routes";
@@ -14,9 +23,16 @@ import { withAuthorization } from "../Session";
 const FilterPage = () => (
   <AppContainer>
     <Wrapper>
-      <RentOrRentout />
-      <Cal />
-      <CarChoice />
+      <Box>
+        <RentOrRentout />
+        <Cal />
+        <CarChoice />
+        <Link to={ROUTES.HOME}>
+          <Button backgroundColor="#43456C" textColor="#fff">
+            DONE
+          </Button>
+        </Link>
+      </Box>
     </Wrapper>
   </AppContainer>
 );
@@ -37,21 +53,31 @@ function Cal() {
 
   return (
     <CalDiv>
-      <p>When do you need a car?</p>
+      <h3>When do you need a car?</h3>
       <Calendar onChange={onChange} value={value} />
     </CalDiv>
   );
 }
 const CarChoice = () => (
-  <div>
-    What type of car?
-    <div>
-      Large storage?
-      <div>
-        <div>yes</div>no<div></div>
-      </div>
-    </div>
-  </div>
+  <CarChoiceContainer>
+    <h1>What type of car?</h1>
+    <Choice>
+      <p>Large storage</p>
+      <BtnWrap>
+        <Btn>yes</Btn>
+        <Btn>no</Btn>
+      </BtnWrap>
+    </Choice>
+    <Choice>
+      <p>Amount of seats</p>
+      <BtnWrap>
+        <Btn>2</Btn>
+        <Btn>3</Btn>
+        <Btn>5</Btn>
+        <Btn>9</Btn>
+      </BtnWrap>
+    </Choice>
+  </CarChoiceContainer>
 );
 
 const condition = (authUser) => !!authUser;
