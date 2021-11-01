@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import { Input } from "../Input.style";
-import { Button } from "../Button.style";
-import { AppContainer, Wrapper, Box } from "../Container.style";
+import { Button, BackButton } from "../Button.style";
+import { AppContainer, Wrapper, Box, TopNavDiv } from "../Container.style";
 
 import { SignInLink } from "../SignIn";
 import { withFirebase } from "../Firebase";
@@ -12,10 +12,14 @@ import * as ROUTES from "../../constants/routes";
 const SignUpPage = () => (
   <AppContainer>
     <Wrapper>
+      <TopNavDiv>
+        <Link to={ROUTES.LANDING}>
+          <BackButton />
+        </Link>
+      </TopNavDiv>
       <Box>
         <h1>Sign up</h1>
         <SignUpForm />
-        <SignInLink />
       </Box>
     </Wrapper>
   </AppContainer>
@@ -43,7 +47,7 @@ class SignUpFormBase extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then((authUser) => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.FILTER);
       })
       .catch((error) => {
         this.setState({ error });
@@ -95,6 +99,7 @@ class SignUpFormBase extends Component {
           type="password"
           placeholder="Confirm Password"
         />
+        <SignInLink />
         <Button
           backgroundColor="#43456C"
           textColor="#fff"

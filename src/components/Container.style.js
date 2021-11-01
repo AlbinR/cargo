@@ -15,8 +15,13 @@ export const Wrapper = styled.div`
 `;
 
 export const Box = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   max-width: 280px;
+  margin-bottom: 30px;
+`;
+
+export const TopNavDiv = styled.div`
+  top: 0;
+  width: 280px;
+  height: 30px;
+  margin-bottom: 20px;
 `;

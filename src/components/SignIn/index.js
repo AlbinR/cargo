@@ -4,8 +4,8 @@ import { compose } from "recompose";
 
 import {} from "./Signin.style";
 import { Input } from "../Input.style";
-import { Button } from "../Button.style";
-import { AppContainer, Wrapper, Box } from "../Container.style";
+import { BackButton, Button } from "../Button.style";
+import { AppContainer, Wrapper, Box, TopNavDiv } from "../Container.style";
 
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
@@ -15,6 +15,11 @@ import * as ROUTES from "../../constants/routes";
 const SignInPage = () => (
   <AppContainer>
     <Wrapper>
+      <TopNavDiv>
+        <Link to={ROUTES.LANDING}>
+          <BackButton />
+        </Link>
+      </TopNavDiv>
       <Box>
         <h1>Login</h1>
         <SignInForm />

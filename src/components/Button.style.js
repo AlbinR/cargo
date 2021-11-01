@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IoMdArrowBack } from "react-icons/io";
 
 export const Button = styled.button`
   width: 100%;
@@ -14,4 +15,9 @@ export const Button = styled.button`
   font-size: 20px;
   margin: 10px 0;
   cursor: pointer;
+`;
+
+export const BackButton = styled(IoMdArrowBack)`
+  color: #000;
+  font-size: 20px;
 `;

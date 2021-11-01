@@ -7,6 +7,7 @@ import LandingPage from "../Landing";
 import SignUpPage from "../SignUp";
 import SignInPage from "../SignIn";
 import PasswordForgetPage from "../PasswordForget";
+import FilterPage from "../Filter";
 import HomePage from "../Home";
 import AccountPage from "../Account";
 
@@ -27,6 +28,7 @@ const App = () => (
         path={ROUTES.PASSWORD_FORGET}
         component={PasswordForgetPage}
       />
+      <Route exact path={ROUTES.FILTER} component={FilterPage} />
       <Route exact path={ROUTES.HOME} component={HomePage} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
     </div>
