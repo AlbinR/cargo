@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { Component, useState } from "react";
+import { withRouter, Link } from "react-router-dom";
 
-import { withAuthorization } from '../Session';
+import { Nav, NavbarContainer, NavMenu, NavLinks, NavItem } from "./Home.style";
+import { AppContainer } from "../Container.style";
+
+import * as ROUTES from "../../constants/routes";
+import { withAuthorization } from "../Session";
 
 const HomePage = () => (
-  <div>
-    <h1>Home Page</h1>
-    <p>The Home Page is accessible by every signed in user.</p>
-  </div>
+  <AppContainer>
+    <MobileNav />
+  </AppContainer>
 );
 
-const condition = authUser => !!authUser;
+const MobileNav = () => (
+  <>
+    <Nav>
+      <NavbarContainer>
+        <NavMenu>
+          <NavItem>
+            <NavLinks to="about">A</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to="portfolio">P</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to="contact">C</NavLinks>
+          </NavItem>
+        </NavMenu>
+      </NavbarContainer>
+    </Nav>
+  </>
+);
+
+const condition = (authUser) => !!authUser;
 
 export default withAuthorization(condition)(HomePage);
