@@ -1,58 +1,61 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Nav = styled.nav`
-  background: purple;
-  height: 88px;
-  display: flex;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  position: fixed;
+export const HomeBg = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
   bottom: 0;
-  z-index: 10;
-  transition: 0.5s all ease;
-`;
-
-export const NavbarContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 80px;
-  z-index: 1;
+  left: 0;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
 `;
 
-export const NavMenu = styled.ul`
+export const MapBg = styled.img`
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background: #232a34;
+`;
+export const HomeContent = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  list-style: none;
-  text-align: center;
 `;
-
-export const NavItem = styled.li`
-  height: 80px;
-`;
-
-export const NavLinks = styled(Link)`
-  color: gray;
+export const MapOrList = styled.div`
+  width: 270px;
+  height: 38px;
+  border: 1px solid #43456c;
+  background-color: #f1f1f1;
+  top: 30px;
+  z-index: 3;
+  position: absolute;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  text-decoration: none;
-  font-size: 20px;
-  letter-spacing: 2px;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-  transition: 0.2s;
+  border-radius: 50px;
+  font-size: 16px;
+`;
 
-  &.active {
-    border-bottom: 2px solid #4b8ea9;
-    color: #fff;
-    transition: 0;
-  }
-  &:hover {
-    color: #fff;
-  }
+export const MapBtn = styled.div`
+  border-radius: 50px;
+  background-color: #fff;
+  padding: 7px 48px;
+  margin: 0 3px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+`;
+
+export const ListBtn = styled.div`
+  padding: 0 48px;
+`;
+
+export const InputContainer = styled.div`
+  position: absolute;
+  width: 95vw;
+  bottom: 90px;
 `;
