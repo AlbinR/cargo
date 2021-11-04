@@ -3,5 +3,6 @@ export const SIGN_IN = "/signin";
 export const LANDING = "/";
 export const FILTER = "/filter";
 export const HOME = "/home";
+export const LIST = "/list";
 export const ACCOUNT = "/account";
 export const PASSWORD_FORGET = "/pw-forget";

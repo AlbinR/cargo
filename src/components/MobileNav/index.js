@@ -113,7 +113,7 @@ export const MobileNav = () => (
             </NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to="portfolio">
+            <NavLinks to="#">
               <svg
                 width="51"
                 height="69"

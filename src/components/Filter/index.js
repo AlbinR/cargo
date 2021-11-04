@@ -41,7 +41,7 @@ const RentOrRentout = () => (
   <>
     <OrDiv>
       <Book>Book a car</Book>
-      <Link to="/">
+      <Link to="#">
         <Rent>Rent your car</Rent>
       </Link>
     </OrDiv>

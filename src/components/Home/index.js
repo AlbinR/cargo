@@ -26,7 +26,9 @@ const HomePage = () => (
     <HomeContent>
       <MapOrList>
         <MapBtn>Map</MapBtn>
-        <ListBtn>List</ListBtn>
+        <Link to={ROUTES.LIST}>
+          <ListBtn>List</ListBtn>
+        </Link>
       </MapOrList>
       <InputContainer>
         <Input placeholder="Search" />

@@ -9,6 +9,7 @@ import SignInPage from "../SignIn";
 import PasswordForgetPage from "../PasswordForget";
 import FilterPage from "../Filter";
 import HomePage from "../Home";
+import ListPage from "../List";
 import AccountPage from "../Account";
 
 import * as ROUTES from "../../constants/routes";
@@ -30,6 +31,7 @@ const App = () => (
       />
       <Route exact path={ROUTES.FILTER} component={FilterPage} />
       <Route exact path={ROUTES.HOME} component={HomePage} />
+      <Route exact path={ROUTES.LIST} component={ListPage} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
     </div>
   </Router>

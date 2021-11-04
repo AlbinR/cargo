@@ -52,6 +52,7 @@ export const MapBtn = styled.div`
 
 export const ListBtn = styled.div`
   padding: 0 48px;
+  text-decoration: none;
 `;
 
 export const InputContainer = styled.div`
