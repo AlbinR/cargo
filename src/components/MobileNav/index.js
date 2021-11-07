@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { withRouter, Link } from "react-router-dom";
+import React from "react";
 
 import * as ROUTES from "../../constants/routes";
 

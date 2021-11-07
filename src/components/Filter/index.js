@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Calendar from "react-calendar";
-import { withRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Button } from "../Button.style";
 import { AppContainer, Wrapper, Box } from "../Container.style";

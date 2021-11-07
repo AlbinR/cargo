@@ -1,5 +1,5 @@
-import React, { Component, useState } from "react";
-import { withRouter, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { Input } from "../Input.style";
 import Image from "../../images/map.jpg";
