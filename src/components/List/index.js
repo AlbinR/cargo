@@ -1,12 +1,28 @@
 import React, { Component, useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 
-import { Toggles, Alt } from "./List.style";
-
-import { Input } from "../Input.style";
-import Image from "../../images/map.jpg";
+import {
+  ToggleContainer,
+  Toggles,
+  SelectedAlt,
+  Alt,
+  Head,
+  Title,
+  Sort,
+  CarListContainer,
+  CarPair,
+  Car,
+  CarImg,
+  CarInfo,
+  CarText,
+  CarName,
+  CarOwner,
+  CarRating,
+  Star,
+  StyledHr,
+} from "./List.style";
+import Image from "../../images/volvo.png";
 import { MobileNav } from "../MobileNav";
-import {} from "./List.style";
 import { AppContainer } from "../Container.style";
 
 import * as ROUTES from "../../constants/routes";
@@ -14,25 +30,86 @@ import { withAuthorization } from "../Session";
 
 const ListPage = () => (
   <AppContainer>
-    <SortingToggles />
+    <Header />
+    <CarList />
     <MobileNav />
   </AppContainer>
 );
 
-const Header = () => <div></div>;
+const Header = () => (
+  <Head>
+    <Title>Available Cars</Title>
+    <StyledHr />
+    <Sort>Sort</Sort>
+    <SortingToggles />
+  </Head>
+);
 
 const SortingToggles = () => (
-  <Toggles>
-    <div>
+  <ToggleContainer>
+    <Toggles>
       <Alt>Rating</Alt>
-      <Alt>Newest</Alt>
+      <SelectedAlt>Newest</SelectedAlt>
       <Alt>Closest</Alt>
-    </div>
-    <div>
+    </Toggles>
+    <Toggles>
       <Alt>Map</Alt>
-      <Alt>List</Alt>
-    </div>
-  </Toggles>
+      <SelectedAlt>List</SelectedAlt>
+    </Toggles>
+  </ToggleContainer>
+);
+
+const CarList = () => (
+  <CarListContainer>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+    <CarPair>
+      <CarItem />
+      <CarItem />
+    </CarPair>
+  </CarListContainer>
+);
+
+const CarItem = () => (
+  <Car>
+    <CarImg src={Image} />
+    <CarInfo>
+      <CarText>
+        <CarName>Volvo XC60</CarName>
+        <CarOwner>Owner: Per Persson</CarOwner>
+      </CarText>
+      <CarRating>
+        <Star />
+        4.9
+      </CarRating>
+    </CarInfo>
+  </Car>
 );
 
 const condition = (authUser) => !!authUser;

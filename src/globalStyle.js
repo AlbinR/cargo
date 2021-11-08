@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 *{
-     margin: 0;
+   margin: 0;
     padding: 0;
     font-family: 'Comfortaa', cursive;
-    overflow: hidden;
+    box-sizing: border-box;
  }
 `;
 
