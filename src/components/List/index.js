@@ -20,6 +20,7 @@ import {
   CarRating,
   Star,
   StyledHr,
+  LINK,
 } from "./List.style";
 import Image from "../../images/volvo.png";
 import { MobileNav } from "../MobileNav";
@@ -53,7 +54,9 @@ const SortingToggles = () => (
       <Alt>Closest</Alt>
     </Toggles>
     <Toggles>
-      <Alt>Map</Alt>
+      <LINK to={ROUTES.HOME}>
+        <Alt>Map</Alt>
+      </LINK>
       <SelectedAlt>List</SelectedAlt>
     </Toggles>
   </ToggleContainer>
@@ -62,36 +65,52 @@ const SortingToggles = () => (
 const CarList = () => (
   <CarListContainer>
     <CarPair>
-      <CarItem />
-      <CarItem />
+      <LINK>
+        <CarItem />
+      </LINK>
+      <LINK>
+        <CarItem />
+      </LINK>
     </CarPair>
     <CarPair>
-      <CarItem />
-      <CarItem />
+      <LINK>
+        <CarItem />
+      </LINK>
+      <LINK>
+        <CarItem />
+      </LINK>
     </CarPair>
     <CarPair>
-      <CarItem />
-      <CarItem />
+      <LINK>
+        <CarItem />
+      </LINK>
+      <LINK>
+        <CarItem />
+      </LINK>
     </CarPair>
     <CarPair>
-      <CarItem />
-      <CarItem />
+      <LINK>
+        <CarItem />
+      </LINK>
+      <LINK>
+        <CarItem />
+      </LINK>
     </CarPair>
     <CarPair>
-      <CarItem />
-      <CarItem />
+      <LINK>
+        <CarItem />
+      </LINK>
+      <LINK>
+        <CarItem />
+      </LINK>
     </CarPair>
     <CarPair>
-      <CarItem />
-      <CarItem />
-    </CarPair>
-    <CarPair>
-      <CarItem />
-      <CarItem />
-    </CarPair>
-    <CarPair>
-      <CarItem />
-      <CarItem />
+      <LINK>
+        <CarItem />
+      </LINK>
+      <LINK>
+        <CarItem />
+      </LINK>
     </CarPair>
   </CarListContainer>
 );

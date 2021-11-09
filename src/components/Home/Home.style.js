@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const LINK = styled(Link)`
+  text-decoration: none;
+  color: #000;
+`;
 
 export const HomeBg = styled.div`
   position: absolute;
@@ -50,8 +56,8 @@ export const MapBtn = styled.div`
 `;
 
 export const ListBtn = styled.div`
-  padding: 0 48px;
-  text-decoration: none;
+  padding: 7px 45px;
+  margin: 0 3px;
 `;
 
 export const InputContainer = styled.div`

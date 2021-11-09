@@ -1,5 +1,11 @@
 import styled from "styled-components";
 import { BsStarFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+
+export const LINK = styled(Link)`
+  text-decoration: none;
+  color: #000;
+`;
 
 export const ToggleContainer = styled.div`
   display: flex;
@@ -22,7 +28,15 @@ export const Toggles = styled.div`
   margin: 5px;
 `;
 
-export const Alt = styled.div``;
+export const Alt = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 90px;
+  text-decoration: none !important;
+  color: #000;
+`;
 
 export const SelectedAlt = styled.div`
   display: flex;
@@ -78,6 +92,7 @@ export const Car = styled.div`
   margin: 5px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  text-decoration: none;
 `;
 export const CarImg = styled.img`
   width: 100%;

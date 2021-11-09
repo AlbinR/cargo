@@ -12,6 +12,7 @@ import {
   ListBtn,
   HomeContent,
   InputContainer,
+  LINK,
 } from "./Home.style";
 import { AppContainer } from "../Container.style";
 
@@ -26,9 +27,9 @@ const HomePage = () => (
     <HomeContent>
       <MapOrList>
         <MapBtn>Map</MapBtn>
-        <Link to={ROUTES.LIST}>
+        <LINK to={ROUTES.LIST}>
           <ListBtn>List</ListBtn>
-        </Link>
+        </LINK>
       </MapOrList>
       <InputContainer>
         <Input placeholder="Search" />
