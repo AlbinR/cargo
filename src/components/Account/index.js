@@ -136,7 +136,7 @@ const VehicleCard = () => (
   </CardContainer>
 );
 
-const AboutSection = () => (
+export const AboutSection = () => (
   <AboutContainer>
     <p>About me</p>
     <AboutText>
@@ -149,7 +149,7 @@ const AboutSection = () => (
   </AboutContainer>
 );
 
-const ReviewSection = () => (
+export const ReviewSection = () => (
   <ReviewContainer>
     <p>Reviews</p>
     <Toggle>

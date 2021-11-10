@@ -62,6 +62,6 @@ export const ListBtn = styled.div`
 
 export const InputContainer = styled.div`
   position: absolute;
-  width: 95vw;
+  width: 360px;
   bottom: 90px;
 `;

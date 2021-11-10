@@ -11,6 +11,7 @@ import FilterPage from "../Filter";
 import HomePage from "../Home";
 import ListPage from "../List";
 import AccountPage from "../Account";
+import UserPage from "../UserProfile";
 import RentOutPage from "../RentOut/Stepone";
 import CarInfoPage from "../CarInfo";
 
@@ -36,6 +37,7 @@ const App = () => (
       <Route exact path={ROUTES.LIST} component={ListPage} />
       <Route exact path={ROUTES.CARINFO} component={CarInfoPage} />
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
+      <Route exact path={ROUTES.USER} component={UserPage} />
       <Route exact path={ROUTES.RENTOUT} component={RentOutPage} />
     </div>
   </Router>

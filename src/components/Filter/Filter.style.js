@@ -34,6 +34,9 @@ export const CalDiv = styled.div`
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 10px 0;
+  h3 {
+    padding: 10px;
+  }
 `;
 
 export const CarChoiceContainer = styled.div`
@@ -46,6 +49,9 @@ export const CarChoiceContainer = styled.div`
   margin: 10px 0;
   padding: 5px;
   font-size: 10px;
+  h1 {
+    padding: 10px;
+  }
 `;
 
 export const Choice = styled.div`

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { compose } from "recompose";
 
-import {} from "./Signin.style";
 import { Input } from "../Input.style";
 import { BackButton, Button } from "../Button.style";
 import { AppContainer, Wrapper, Box, TopNavDiv } from "../Container.style";
@@ -84,7 +83,6 @@ class SignInFormBase extends Component {
           placeholder="Password"
         />
         <PasswordForgetLink />
-
         <Button
           backgroundColor="#43456C"
           textColor="#fff"
@@ -93,6 +91,7 @@ class SignInFormBase extends Component {
         >
           LOGIN
         </Button>
+
         <SignUpLink />
       </form>
     );

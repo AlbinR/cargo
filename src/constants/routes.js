@@ -7,4 +7,5 @@ export const RENTOUT = "/rentout";
 export const CARINFO = "/carinfo";
 export const LIST = "/list";
 export const ACCOUNT = "/account";
+export const USER = "/user";
 export const PASSWORD_FORGET = "/pw-forget";
