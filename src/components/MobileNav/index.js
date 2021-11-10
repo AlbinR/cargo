@@ -112,7 +112,7 @@ export const MobileNav = () => (
             </NavLinks>
           </NavItem>
           <NavItem>
-            <NavLinks to="#">
+            <NavLinks to={ROUTES.RENTOUT}>
               <svg
                 width="51"
                 height="69"

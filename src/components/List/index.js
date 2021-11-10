@@ -1,6 +1,4 @@
-import React, { Component, useState } from "react";
-import { withRouter, Link } from "react-router-dom";
-
+import React from "react";
 import {
   ToggleContainer,
   Toggles,
@@ -65,50 +63,50 @@ const SortingToggles = () => (
 const CarList = () => (
   <CarListContainer>
     <CarPair>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
-      <LINK>
-        <CarItem />
-      </LINK>
-    </CarPair>
-    <CarPair>
-      <LINK>
-        <CarItem />
-      </LINK>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
     </CarPair>
     <CarPair>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
-      <LINK>
-        <CarItem />
-      </LINK>
-    </CarPair>
-    <CarPair>
-      <LINK>
-        <CarItem />
-      </LINK>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
     </CarPair>
     <CarPair>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
     </CarPair>
     <CarPair>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
-      <LINK>
+      <LINK to={ROUTES.CARINFO}>
+        <CarItem />
+      </LINK>
+    </CarPair>
+    <CarPair>
+      <LINK to={ROUTES.CARINFO}>
+        <CarItem />
+      </LINK>
+      <LINK to={ROUTES.CARINFO}>
+        <CarItem />
+      </LINK>
+    </CarPair>
+    <CarPair>
+      <LINK to={ROUTES.CARINFO}>
+        <CarItem />
+      </LINK>
+      <LINK to={ROUTES.CARINFO}>
         <CarItem />
       </LINK>
     </CarPair>

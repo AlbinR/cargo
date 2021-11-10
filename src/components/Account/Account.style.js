@@ -237,8 +237,14 @@ export const CommentImgWrapper = styled.div`
   width: 30px;
   background-color: black;
   border-radius: 100%;
+  overflow: hidden;
 `;
-export const CommentImg = styled.img``;
+export const CommentImg = styled.img`
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+`;
 
 export const CommentInfo = styled.div`
   display: flex;

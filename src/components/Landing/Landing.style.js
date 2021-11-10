@@ -17,9 +17,7 @@ export const LandingBox = styled.div`
   max-width: 250px;
 `;
 
-export const Logo = styled.h1`
-  font-size: 40px;
-`;
+export const Logo = styled.div``;
 
 export const Description = styled.p`
   margin: 60px 0 120px 0;

@@ -1,9 +1,12 @@
 import React from "react";
 
-import Image from "../../images/personone.jpg";
+import Personone from "../../images/personone.jpg";
+import Persontwo from "../../images/persontwo.jpg";
 import CarImage from "../../images/volvo.png";
 import { withAuthorization } from "../Session";
 import { AppContainer } from "../Container.style";
+import { LINK } from "../List/List.style";
+
 import {
   ProfileContainer,
   Profile,
@@ -49,6 +52,7 @@ import {
   ComText,
   ComHeading,
 } from "./Account.style";
+import * as ROUTES from "../../constants/routes";
 
 const AccountPage = () => (
   <AppContainer>
@@ -60,9 +64,11 @@ const AccountPage = () => (
   </AppContainer>
 );
 
-const SmallNav = () => (
+export const SmallNav = () => (
   <SNavContainer>
-    <BackIcon />
+    <LINK to={ROUTES.HOME}>
+      <BackIcon />
+    </LINK>
     <OptionsIcon />
   </SNavContainer>
 );
@@ -71,7 +77,7 @@ const Header = () => (
   <ProfileContainer>
     <Profile>
       <ImgWrapper>
-        <ProfileImg src={Image} />
+        <ProfileImg src={Personone} />
       </ImgWrapper>
       <InfoBox>
         <Name>Per Persson</Name>
@@ -99,7 +105,9 @@ const Header = () => (
 
 const UserVehicles = () => (
   <UVehiclesContainer>
-    <AddVBtn>Add Vehicle</AddVBtn>
+    <LINK to={ROUTES.RENTOUT}>
+      <AddVBtn>Add Vehicle</AddVBtn>
+    </LINK>
     <p>Owned cars</p>
     <VehicleCard />
     <p>Rented cars</p>
@@ -159,7 +167,7 @@ const ReviewComment = () => (
     <CommentInfo>
       <ComHeading>
         <CommentImgWrapper>
-          <CommentImg />
+          <CommentImg src={Persontwo} />
         </CommentImgWrapper>
         <CommentName>
           <h1>Ola Svensson</h1>
