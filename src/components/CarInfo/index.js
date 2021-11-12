@@ -61,23 +61,25 @@ const ImgSection = () => (
 
 const CarInfoSection = () => (
   <CarInfoContainer>
-    <Title>
-      <h1>Volov XC60</h1>
-      <p>2019</p>
-    </Title>
-    <UserInfo>
-      <p>owner</p>
-      <h1>Per Persson</h1>
-      <Rating>
-        <p>
-          <Star />
-          4.6
-        </p>
-      </Rating>
-      <UserImgWrapper>
-        <UserImg src={Persontwo} />
-      </UserImgWrapper>
-    </UserInfo>
+    <LINK to={ROUTES.USER}>
+      <Title>
+        <h1>Volov XC60</h1>
+        <p>2019</p>
+      </Title>
+      <UserInfo>
+        <p>owner</p>
+        <h1>Per Persson</h1>
+        <Rating>
+          <p>
+            <Star />
+            4.6
+          </p>
+        </Rating>
+        <UserImgWrapper>
+          <UserImg src={Persontwo} />
+        </UserImgWrapper>
+      </UserInfo>
+    </LINK>
   </CarInfoContainer>
 );
 

@@ -1,26 +1,29 @@
 import React from "react";
 
+import FordGrassImg from "../../images/fordongrasspic.jpg";
 import { LINK } from "../List/List.style";
 import { AppContainer } from "../Container.style";
 import {
   BarWrapper,
   TitleContainer,
   Title,
-  RegContainer,
   ButtonContainer,
+  FoundCarContainer,
   Btn,
+  CarImageWrapperSmall,
 } from "./RentOut.Style";
 import { SmallNav } from "../Account";
 
 import * as ROUTES from "../../constants/routes";
 import { withAuthorization } from "../Session";
 
-const RentOutPage = () => (
+const RentOutPageStepThree = () => (
   <AppContainer>
     <SmallNav />
     <ProgressBar />
     <TitleBox />
-    <RegInputBox />
+    <FoundCar />
+
     <ButtonBox />
   </AppContainer>
 );
@@ -36,9 +39,9 @@ const ProgressBar = () => (
     >
       <circle cx="7.5" cy="7.5" r="7.5" fill="#43456C" />
       <line x1="15" y1="7.5" x2="35" y2="7.5" stroke="black" />
-      <circle cx="42.5" cy="7.5" r="7.5" fill="#C4C4C4" />
+      <circle cx="42.5" cy="7.5" r="7.5" fill="#43456C" />
       <line x1="50" y1="7.5" x2="70" y2="7.5" stroke="black" />
-      <circle cx="77.5" cy="7.5" r="7.5" fill="#C4C4C4" />
+      <circle cx="77.5" cy="7.5" r="7.5" fill="#43456C" />
       <line x1="85" y1="7.5" x2="105" y2="7.5" stroke="black" />
       <circle cx="112.5" cy="7.5" r="7.5" fill="#C4C4C4" />
       <line x1="120" y1="7.5" x2="140" y2="7.5" stroke="black" />
@@ -54,28 +57,27 @@ const ProgressBar = () => (
 const TitleBox = () => (
   <TitleContainer>
     <Title>
-      <p>Rent your car</p>
+      <p>Upload images</p>
     </Title>
   </TitleContainer>
 );
 
-const RegInputBox = () => (
-  <RegContainer>
-    <p>Vehicle registration plate</p>
-    <input placeholder="ABC123" />
-  </RegContainer>
+const FoundCar = () => (
+  <FoundCarContainer>
+    <CarImageWrapperSmall>
+      <img alt="" src={FordGrassImg} />
+    </CarImageWrapperSmall>
+  </FoundCarContainer>
 );
 
 const ButtonBox = () => (
   <ButtonContainer>
-    <LINK to={ROUTES.RENTOUTSTEPTWO}>
-      <Btn backgroundColor="#43456C" textColor="#fff">
-        Next
-      </Btn>
+    <LINK to={ROUTES.RENTOUTSTEPFOUR}>
+      <Btn>Next</Btn>
     </LINK>
   </ButtonContainer>
 );
 
 const condition = (authUser) => !!authUser;
 
-export default withAuthorization(condition)(RentOutPage);
+export default withAuthorization(condition)(RentOutPageStepThree);

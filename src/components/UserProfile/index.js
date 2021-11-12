@@ -1,10 +1,8 @@
 import React from "react";
 
 import Persontwo from "../../images/persontwo.jpg";
-import CarImage from "../../images/volvo.png";
 import { withAuthorization } from "../Session";
 import { AppContainer } from "../Container.style";
-import { LINK } from "../List/List.style";
 import {
   HeadContainer,
   UserImgWrapper,
@@ -21,7 +19,6 @@ import {
   Button,
 } from "./UserProfile.style";
 import { SmallNav, AboutSection, ReviewSection } from "../Account";
-import * as ROUTES from "../../constants/routes";
 
 const UserPage = () => (
   <AppContainer>

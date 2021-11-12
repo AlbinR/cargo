@@ -13,6 +13,12 @@ import ListPage from "../List";
 import AccountPage from "../Account";
 import UserPage from "../UserProfile";
 import RentOutPage from "../RentOut/Stepone";
+import RentOutPageStepTwo from "../RentOut/Steptwo";
+import RentOutPageStepThree from "../RentOut/Stepthree";
+import RentOutPageStepFour from "../RentOut/Stepfour";
+import RentOutPageStepFive from "../RentOut/Stepfive";
+import RentOutPageStepSix from "../RentOut/Stepsix";
+
 import CarInfoPage from "../CarInfo";
 
 import * as ROUTES from "../../constants/routes";
@@ -39,6 +45,31 @@ const App = () => (
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.USER} component={UserPage} />
       <Route exact path={ROUTES.RENTOUT} component={RentOutPage} />
+      <Route
+        exact
+        path={ROUTES.RENTOUTSTEPTWO}
+        component={RentOutPageStepTwo}
+      />
+      <Route
+        exact
+        path={ROUTES.RENTOUTSTEPTHREE}
+        component={RentOutPageStepThree}
+      />
+      <Route
+        exact
+        path={ROUTES.RENTOUTSTEPFOUR}
+        component={RentOutPageStepFour}
+      />
+      <Route
+        exact
+        path={ROUTES.RENTOUTSTEPFIVE}
+        component={RentOutPageStepFive}
+      />
+      <Route
+        exact
+        path={ROUTES.RENTOUTSTEPSIX}
+        component={RentOutPageStepSix}
+      />
     </div>
   </Router>
 );
