@@ -1,4 +1,4 @@
-## Cargo _Rent or Rent out your car_
+# **Cargo**: Rent or Rent out your car
 
 ---
 
