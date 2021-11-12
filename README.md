@@ -1,6 +1,6 @@
-# **Cargo** Rent or Rent out your car
+# Cargo: Rent or Rent out your car
 
-> Hello, my name is Albin Ryberg i have made a prototype app for one of my projects.
+> Hello, my name is Albin Ryberg, and this is my prototype app for one of my projects.
 
 ---
 
